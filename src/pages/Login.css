@@ -1,0 +1,11 @@
+.login_logo > img {
+  object-fit: contain;
+  height: 60px;
+  padding: 200px 0px 0px 230px;
+}
+
+.login_logo > h2 {
+  padding: 20px 0px 0px 230px;
+  font-size: 28px;
+  font-weight: 500;
+}
