@@ -5,7 +5,7 @@ import Sidebar from '../components/Sidebar';
 import Widgets from '../components/Widgets';
 import Login from '../pages/Login';
 
-function App() {
+const App = () => {
   const user = null;
   return (
     <div className="app">

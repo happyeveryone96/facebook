@@ -1,11 +1,21 @@
+.login {
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+  margin: auto;
+  background-color: #eff2f5;
+}
+
 .login_logo > img {
   object-fit: contain;
-  height: 60px;
-  padding: 200px 0px 0px 230px;
+  height: 250px;
+  padding: 200px 0px 0px 100px;
 }
 
 .login_logo > h2 {
-  padding: 20px 0px 0px 230px;
-  font-size: 28px;
-  font-weight: 500;
+  width: 600px;
+  padding: 20px 0px 0px 100px;
+  font-size: 27px;
+  font-weight: 550;
+  line-height: 0.8cm;
 }
