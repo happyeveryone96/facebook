@@ -135,6 +135,20 @@
       "password": "ㅁㄴㅇㅁㄴㅇ",
       "birth": "2019-5월-14",
       "gender": "male"
+    },
+    {
+      "name": "asdf asdf",
+      "id": "asdfa",
+      "password": "asdf",
+      "birth": "2021-07-18",
+      "gender": "male"
+    },
+    {
+      "name": "하세요 안녕",
+      "id": "0101234123",
+      "password": "ㅁㄴㅇㄹㅂㅈㄷㄱ",
+      "birth": "2019-5월-14",
+      "gender": "male"
     }
   ]
 }

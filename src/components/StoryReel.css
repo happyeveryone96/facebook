@@ -1,3 +1,21 @@
 .storyReel {
+    position: relative;
     display: flex;
+    left: 30px;
+}
+
+.arrowButton {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 48px;
+    background-color: white;
+    border: 1px solid lightgray;
+    color: gray;
+    margin: auto;
+    right: 30px;
+}
+
+.arrowButton:hover {
+    background-color: #eff2f5;
 }

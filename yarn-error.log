@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/jinwoojung/.nvm/versions/node/v14.17.1/bin/node /Users/jinwoojung/.nvm/versions/node/v14.17.1/bin/yarn add @material-ui/icon/Videocam
+  /Users/jinwoojung/.nvm/versions/node/v14.17.1/bin/node /Users/jinwoojung/.nvm/versions/node/v14.17.1/bin/yarn add @material-ui/icons/PhotoLibraryIcon
 
 PATH: 
   /Users/jinwoojung/.nvm/versions/node/v14.17.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/jinwoojung/.nvm/versions/node/v14.17.1/bin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@material-ui%2ficon/Videocam: Request "https://registry.yarnpkg.com/@material-ui%2ficon/Videocam" returned a 405
+  Error: https://registry.yarnpkg.com/@material-ui%2ficons/PhotoLibraryIcon: Request "https://registry.yarnpkg.com/@material-ui%2ficons/PhotoLibraryIcon" returned a 405
       at Request.params.callback [as _callback] (/Users/jinwoojung/.nvm/versions/node/v14.17.1/lib/node_modules/yarn/lib/cli.js:66997:18)
       at Request.self.callback (/Users/jinwoojung/.nvm/versions/node/v14.17.1/lib/node_modules/yarn/lib/cli.js:140662:22)
       at Request.emit (events.js:375:28)
@@ -33,6 +33,7 @@ npm manifest:
     "private": true,
     "dependencies": {
       "@material-ui/core": "^4.12.1",
+      "@material-ui/icons": "^4.11.2",
       "@testing-library/jest-dom": "^5.11.4",
       "@testing-library/react": "^11.1.0",
       "@testing-library/user-event": "^12.1.10",
@@ -1627,6 +1628,13 @@ Lockfile:
       prop-types "^15.7.2"
       react-is "^16.8.0 || ^17.0.0"
       react-transition-group "^4.4.0"
+  
+  "@material-ui/icons@^4.11.2":
+    version "4.11.2"
+    resolved "https://registry.yarnpkg.com/@material-ui/icons/-/icons-4.11.2.tgz#b3a7353266519cd743b6461ae9fdfcb1b25eb4c5"
+    integrity sha512-fQNsKX2TxBmqIGJCSi3tGTO/gZ+eJgWmMJkgDiOfyNaunNaxcklJQFaFogYcFl0qFuaEz1qaXYXboa/bUXVSOQ==
+    dependencies:
+      "@babel/runtime" "^7.4.4"
   
   "@material-ui/styles@^4.11.4":
     version "4.11.4"

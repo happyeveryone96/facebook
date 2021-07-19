@@ -69,7 +69,7 @@ const SignUpModal = (props) => {
             <Dialog style={{height:'800px', margin:'auto'}} open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
             <Grid is_flex>
             <DialogTitle id="form-dialog-title">가입하기</DialogTitle>
-            <Button _onClick={handleClose} width="40px" backgroundColor="white" color="black">X</Button>
+            <Button margin="0 10px 0 0" _onClick={handleClose} width="40px" backgroundColor="white" color="black">X</Button>
             </Grid>
             <DialogContent>
                 
@@ -164,9 +164,10 @@ const SignUpModal = (props) => {
                 <div style={{marginLeft:'3px',fontSize:'11px'}}>가입하기 버튼을 클릭하면 Facebook의 <a href="https://www.facebook.com/legal/terms/update">약관</a>, <a href="https://www.facebook.com/about/privacy/update">데이터 정책</a> 및 <a href="https://www.facebook.com/policies/cookies/">쿠키 정책</a>에 동의하게 됩니다.<br></br> Facebook으로부터 SMS 알림을 받을 수 있으며 알림은 언제든지 옵트 아웃할 수 있습니다.</div>
             </DialogContent>
             <DialogActions>
-                <Button margin='auto' width='194px' height='36px' backgroundColor='rgb(92,163,38)' _onClick={()=>signup()}>
+                <Button width='194px' height='36px' backgroundColor='rgb(92,163,38)' _onClick={()=>signup()}>
                 가입하기
                 </Button>
+                
             </DialogActions>
             </Dialog>
         </div>

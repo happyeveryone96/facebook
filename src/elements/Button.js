@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Button = (props) => {
-  const { color, text, _onClick, is_float, children, margin, width, padding, backgroundColor } = props;
+  const { color, text, _onClick, is_float, children, margin, width, 
+          padding, backgroundColor, height, fontSize} = props;
 
   if (is_float) {
     return (
@@ -18,6 +19,9 @@ const Button = (props) => {
     padding: padding,
     backgroundColor:backgroundColor,
     color:color,
+    height:height,
+    fontSize:fontSize,
+    padding:padding,
   };
 
   return (
@@ -33,11 +37,12 @@ Button.defaultProps = {
   children: null,
   _onClick: () => {},
   is_float: false,
-  margin: false,
+  margin: 'auto',
   width: '100%',
   padding: "12px 0px",
   backgroundColor:'pink',
   color: 'white',
+  height: '50px',
 };
 
 const ElButton = styled.button`
@@ -48,16 +53,18 @@ const ElButton = styled.button`
   color: ${(props) => props.color};
   padding: ${(props) => props.padding};
   box-sizing: border-box;
-  border: none;
   border-radius: 5px;
   font-size: 17px;
   font-weight: bold;
-  ${(props) => (props.margin? `margin: ${props.margin};` : '')}
+  margin: ${(props) => props.margin};
+  border: none;
+  height: ${(props) => props.height};
+  font-size: ${(props) => props.fontSize};
 `;
 
 const FloatButton = styled.button`
   width: 50px;
-  height: 50px;
+  height: ${(props) => props.height};
   /* background-color: #212121; */
   background-color: lightpink;
   color: ${(props) => props.color};
@@ -71,6 +78,9 @@ const FloatButton = styled.button`
   vertical-align: middle;
   border: none;
   border-radius: 50px;
+  margin: ${(props) => props.margin};
+  padding: ${(props) => props.padding};
+  height: ${(props) => props.height};
 `;
 
 export default Button;
