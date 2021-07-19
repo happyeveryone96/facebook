@@ -6,6 +6,8 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import SignUpModal from '../components/SignUpModal'
+
 
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
@@ -111,7 +113,8 @@ export default function LoginBox() {
                             <hr style={{ margin: "20px 0px", border: "solid 1px lightgray" }} />
                             {/* 새 계정 만들기_진우님 버튼 넣기 */}
                             <div style={{ margin: "25px 0px" }}>
-                                <button style={{ height: "40px" }}>새 계정 만들기</button>
+                                <SignUpModal/>
+                                {/* <button style={{ height: "40px" }}>새 계정 만들기</button> */}
                             </div>
                         </Grid>
                     </Grid>
