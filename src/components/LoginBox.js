@@ -18,7 +18,6 @@ import { borderRadius } from '@material-ui/system';
 function Copyright() {
     return (
         <Typography variant="body2" color="black" align="center">
-            {/* {'Copyright © '} */}
             {'유명인, 밴드, 비즈니스를 위한 '}
             <Link style={{ color: "black", fontWeight: "bolder" }} href="https://www.facebook.com/pages/create/?ref_type=registration_form">
                 페이지 만들기
@@ -37,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "white",
         padding: "10px",
         borderRadius: "10px",
-        boxShadow: "10px 10px 10px px lightgray",
+        boxShadow: "10px 10px 10px -5px lightgray"
     },
     avatar: {
         margin: theme.spacing(1),
