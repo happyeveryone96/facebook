@@ -9,7 +9,7 @@ import PostList from '../pages/PostList';
 
 import { Route, Switch } from "react-router-dom";
 import { ConnectedRouter } from "connected-react-router";
-import { history } from "../redux/configireStore";
+import { history } from "../redux/configureStore";
 
 const App = () => {
   const user = null;

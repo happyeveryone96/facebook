@@ -5,7 +5,7 @@ import App from './shared/App';
 import reportWebVitals from './reportWebVitals';
 
 import { Provider } from 'react-redux';
-import store, { history } from './redux/configireStore'
+import store, { history } from './redux/configureStore'
 import { ConnectedRouter } from 'connected-react-router';
 
 ReactDOM.render(
