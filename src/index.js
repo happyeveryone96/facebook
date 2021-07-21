@@ -3,12 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './shared/App';
 import reportWebVitals from './reportWebVitals';
+
 import { Provider } from 'react-redux';
-import store from './redux/configireStore'
+import store, { history } from './redux/configireStore'
+import { ConnectedRouter } from 'connected-react-router';
 
 ReactDOM.render(
   <Provider store={store}>
-        <App />
+    <ConnectedRouter history={history}>
+      <App />
+    </ConnectedRouter>
   </Provider>
   ,
   document.getElementById('root')

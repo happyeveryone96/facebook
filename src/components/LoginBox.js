@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -16,6 +17,10 @@ import Box from '@material-ui/core/Box';
 import "./LoginBox.css";
 import { auto } from 'async';
 import { borderRadius } from '@material-ui/system';
+
+import { actionCreators as userActions } from "../redux/modules/user";
+import axios from 'axios';
+
 
 function Copyright() {
     return (
@@ -63,6 +68,27 @@ const useStyles = makeStyles((theme) => ({
 export default function LoginBox() {
     const classes = useStyles();
 
+    const dispatch = useDispatch();
+    const [id, setId] = useState();
+    const [pwd, setPwd] = useState();
+
+    const data = {
+        id: id,
+        pwd: pwd,
+    }
+
+    const submitId = (e) => {
+        setId(e.target.value);
+    }
+    const submitPwd = (e) => {
+        setPwd(e.target.value);
+    }
+
+    const LogIn = (response) => {
+        dispatch(userActions.logInDB(id, pwd));
+    }
+
+
     return (
         <Container component="main" maxWidth="xs">
             <CssBaseline />
@@ -73,28 +99,31 @@ export default function LoginBox() {
                         // margin="normal"
                         required
                         fullWidth
-                        id="email"
+                        id="id"
                         label="이메일 또는 전화번호"
-                        name="email"
+                        name="id"
                         autoComplete="email"
                         autoFocus
+                        onChange={submitId}
                     />
                     <TextField
                         variant="outlined"
                         margin="normal"
                         required
                         fullWidth
-                        name="password"
+                        name="pwd"
                         label="비밀번호"
                         type="password"
-                        id="password"
+                        id="pwd"
                         autoComplete="current-password"
+                        onChange={submitPwd}
                     />
                     <Button
                         type="submit"
                         fullWidth
                         variant="contained"
                         className={classes.submit}
+                        onClick={() => { LogIn() }}
                     >
                         로그인
                     </Button>
@@ -111,10 +140,8 @@ export default function LoginBox() {
                                 비밀번호를 잊으셨나요?
                             </Link>
                             <hr style={{ margin: "20px 0px", border: "solid 1px lightgray" }} />
-                            {/* 새 계정 만들기_진우님 버튼 넣기 */}
                             <div style={{ margin: "25px 0px" }}>
-                                <SignUpModal/>
-                                {/* <button style={{ height: "40px" }}>새 계정 만들기</button> */}
+                                <SignUpModal />
                             </div>
                         </Grid>
                     </Grid>

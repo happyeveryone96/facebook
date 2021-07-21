@@ -13,11 +13,22 @@
       "postId": 1
     }
   ],
-  "profile": {
-    "name": "asd asd",
-    "id": "asda",
-    "password": "asdasd",
-    "birth": "2021-07-19",
-    "gender": "female"
-  }
+  "login": [
+    {
+      "id": "111",
+      "password": "111"
+    },
+    {
+      "id": "222",
+      "password": "222"
+    },
+    {
+      "id": "333",
+      "password": "333"
+    },
+    {
+      "id": "444",
+      "password": "444"
+    } 
+  ]
 }
