@@ -84,7 +84,7 @@ export default handleActions(
 const actionCreators = {
     logIn,
     logInDB,
-    signUpDB,
+    signupDB,
 };
 
 export { actionCreators };
