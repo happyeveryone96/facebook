@@ -9,20 +9,66 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {Button, Grid, Input} from "../elements/index";
 import PersonAddSharpIcon from '@material-ui/icons/PersonAddSharp';
 import ForumSharpIcon from '@material-ui/icons/ForumSharp';
 import LocationOnSharpIcon from '@material-ui/icons/LocationOnSharp';
 import MoreHorizSharpIcon from '@material-ui/icons/MoreHorizSharp';
 import UploadButtons from './UploadButtons'
+import {actionCreators as postActions} from '../redux/modules/post';
+import {actionCreators as imageActions} from '../redux/modules/image';
+import { history } from '../redux/configureStore';
+
 
 
 function MessageSender() {
+    // function timeForToday(value) {
+    //     const today = new Date();
+    //     const timeValue = new Date(value);
+
+    //     const betweenTime = Math.floor((today.getTime() - timeValue.getTime()) / 1000 / 60);
+    //     if (betweenTime < 1) return '방금전';
+    //     if (betweenTime < 60) {
+    //         return `${betweenTime}분전`;
+    //     }
+
+    //     const betweenTimeHour = Math.floor(betweenTime / 60);
+    //     if (betweenTimeHour < 24) {
+    //         return `${betweenTimeHour}시간전`;
+    //     }
+
+    //     const betweenTimeDay = Math.floor(betweenTime / 60 / 24);
+    //     if (betweenTimeDay < 365) {
+    //         return `${betweenTimeDay}일전`;
+    //     }
+
+    //     return `${Math.floor(betweenTimeDay / 365)}년전`;
+    // }
+
+    const date = new Date();
+    let currentHour = date.getHours();
+    let currentMinute = date.getMinutes();
+    let currentYear = date.getFullYear();
+    let currentMonth = ("0" + (1 + date.getMonth())).slice(-2);
+    let currentDay = ("0" + date.getDate()).slice(-2);
     // const [input, setInput] = useState('');
     const dispatch = useDispatch();
     const [open, setOpen] = React.useState(false);
+    // const preview = useSelector((state) => state.image.preview);
+    // const post_list = useSelector((state) => state.post.list);
+    const [contents, setContents] = React.useState("");
+    const [name, setName] = React.useState('');
+    // const [createdAt, setCreatedAt] = React.useState(timeForToday(`${currentYear}-${currentMonth}-${currentDay} ${currentHour}:${currentMinute}`));
+    const [createdAt, setCreatedAt] = React.useState(`${currentYear}-${currentMonth}-${currentDay} ${currentHour}:${currentMinute}`);
+    const [content, setContent] = React.useState('');
+    const [image, setImage] = React.useState('');
+    const [profileImage, setProfileImage] = React.useState('');
 
+    const changeContents = (e) => {
+        setContents(e.target.value);
+        // console.log(e.target.value)
+    }
 
 
     const handleClickOpen = (e) => {
@@ -30,9 +76,15 @@ function MessageSender() {
         setOpen(true);
       };
 
-    const handleClose = (e) => {
-       
+    const handleClose = () => {
         setOpen(false);
+      };
+
+      const addPost = () => {
+        dispatch(postActions.addPostDB(name, createdAt, content, image, profileImage));
+        console.log(contents);
+        // uploadDB();
+        handleClose();
       };
 
     const handleUploadButtonOpen = () => {
@@ -65,7 +117,7 @@ function MessageSender() {
                     <button 
                         onClick={handleClickOpen} 
                         className="messageSender__button">
-                            정진우님, 무슨 생각을 하고 계신가요?  
+                            연다은님, 무슨 생각을 하고 계신가요?  
                     </button>
                     <div>
                         <Dialog  style={{width:'700px', margin:'auto'}} open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
@@ -82,7 +134,7 @@ function MessageSender() {
                             <Grid is_flex>
                             <Avatar style={{margin:'10px 0 20px 20px'}}/>
                             <Grid margin="-10px 20px">
-                            <p style={{fontSize:'15px', fontWeight:'bold'}}>정진우</p>
+                            <p style={{fontSize:'15px', fontWeight:'bold'}}>연다은</p>
                             <Button
                                 margin="-4px 0 10px -4px"
                                 color="black" 
@@ -105,7 +157,9 @@ function MessageSender() {
                                             overflow:'hidden',
                                             margin:'0 10px'}} 
                                     rows='4' 
-                                    placeholder="정진우님,무슨 생각을 하고 계신가요?">
+                                    placeholder="정진우님,무슨 생각을 하고 계신가요?"
+                                    onChange={(event) => {
+                                        setContent(event.target.value)}}>
                                 </textarea>
                                 
                                 <div className="uploadButtons" 
@@ -153,7 +207,7 @@ function MessageSender() {
                             <Button 
                                 width="468px" 
                                 height="36px" 
-                                _onClick={handleClose} 
+                                _onClick={addPost} 
                                 color="white" 
                                 backgroundColor="rgb(68,114,227)">
                                 게시

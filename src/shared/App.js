@@ -9,26 +9,26 @@ import PostList from '../pages/PostList';
 
 import { Route } from "react-router-dom";
 import { ConnectedRouter } from "connected-react-router";
-import { history } from "../redux/configireStore";
+import { history } from "../redux/configureStore";
 
 const App = () => {
   const user = null;
   return (
     <div className="app">
-      {!user
+      {/* {!user
         ? (
           <Login />
         )
-        : (
+        : ( */}
           <React.Fragment>
             <Header/>
-            {/* <ConnectedRouter history={history}> */}
-            {/* <div className="app_body"> */}
+            <ConnectedRouter history={history}>
+            <div className="app_body">
             <PostList/>
-            {/* </div> */}
-            {/* </ConnectedRouter> */}
+            </div>
+            </ConnectedRouter>
           </React.Fragment>
-        )}
+        {/* )} */}
     </div>
   );
 }
