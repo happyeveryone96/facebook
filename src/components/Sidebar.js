@@ -12,6 +12,8 @@ import FlagIcon from '@material-ui/icons/Flag';
 import LocalMallIcon from '@material-ui/icons/LocalMall';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
+import './Sidebar.css';
+
 const Sidebar = () => {
 
     return (
