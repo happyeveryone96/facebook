@@ -7,29 +7,33 @@ import Login from '../pages/Login';
 import Feed from '../components/Feed';
 import PostList from '../pages/PostList';
 
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { ConnectedRouter } from "connected-react-router";
-import { history } from "../redux/configureStore";
+import { history } from "../redux/configireStore";
 
 const App = () => {
   const user = null;
   return (
-    <div className="app">
-      {/* {!user
-        ? (
-          <Login />
-        )
-        : ( */}
-      <React.Fragment>
-        <Header />
-        <ConnectedRouter history={history}>
-          <div className="app_body">
-            <PostList />
-          </div>
-        </ConnectedRouter>
-      </React.Fragment>
-      {/* )} */}
-    </div>
+    <React.Fragment className="app">
+      <ConnectedRouter history={history}>
+        <Switch>
+          <Route exact path="/" component={PostList} />
+          <Route exact path="/login" component={Login} />
+        </Switch>
+      </ConnectedRouter>
+    </React.Fragment>
+    // {/* 
+    // {!user
+    //   ? (
+    //     <Login />
+    //   )
+    //   : (
+    //     <React.Fragment>
+    //       <Header />
+    //       <PostList />
+    //     </React.Fragment>
+    //   )} */}
+
   );
 }
 
