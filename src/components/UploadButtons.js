@@ -17,11 +17,12 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
   
-  export default function UploadButtons() {
+  export default function UploadButtons(props) {
     const dispatch = useDispatch();
     const classes = useStyles();
     const [image, setImage] = React.useState('');
-
+    console.log(image);
+    console.log(props.image);
     // const is_uploading = useSelector(state => state.image.uploading);
     const fileInput = React.useRef();
 
@@ -32,22 +33,22 @@ const useStyles = makeStyles((theme) => ({
 
         // console.log(fileInput.current.files[0]);
 
-        const reader = new FileReader();
-        const file = fileInput.current.files[0];
+        // const reader = new FileReader();
+        // const file = fileInput.current.files[0];
 
-        reader.readAsDataURL(file);
+        // reader.readAsDataURL(file);
 
-        reader.onloadend = () => {
-            console.log(reader.result);
-            dispatch(imageActions.setPreview(reader.result));
-        }
+        // reader.onloadend = () => {
+        //     console.log(reader.result);
+        //     dispatch(imageActions.setPreview(reader.result));
+        // }
     }
 
-    const uploadDB = () => {
-        let image = fileInput.current.files[0];
-        dispatch(imageActions.uploadImageDB(image));
+    // const uploadDB = () => {
+    //     let image = fileInput.current.files[0];
+    //     dispatch(imageActions.uploadImageDB(image));
         
-    }
+    // }
 
     return (
       <div className={classes.root}>
@@ -57,7 +58,8 @@ const useStyles = makeStyles((theme) => ({
           id="contained-button-file"
           multiple
           type="file"
-          onChange={selectFile} 
+          onChange={(event) => {
+           setImage(event.target.value)}}
           ref={fileInput} 
           // disabled={is_uploading}
           // onChange={(event) => {

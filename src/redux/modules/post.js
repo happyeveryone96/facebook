@@ -40,6 +40,7 @@ const getPostDB = () => {
 
 
       instance
+        // .get('/posts/post')
         .get('/post')
         .then((res) => {
             console.log(res);
@@ -54,11 +55,23 @@ const getPostDB = () => {
     };
   };
 
+  export const UploadPost = (data) =>
+  async (dispatch, getState, { history }) => {
+    try {
+      const upload = await instance.post("/post", data);
+      console.log(upload);
+    } catch (error) {
+      window.alert(error.message);
+    }
+  };
+
+
 
 const addPostDB = (name, createdAt, content, image, profileImage) => {
     return function () {
 
     instance
+        // .post('/posts/post', { name: name, createdAt: createdAt, content: content, image: image, profileImage: profileImage})
         .post('/post', { name: name, createdAt: createdAt, content: content, image: image, profileImage: profileImage})
         .then((window.location.reload()))
         .catch((error) => {
@@ -70,43 +83,45 @@ const addPostDB = (name, createdAt, content, image, profileImage) => {
     };
   };
 
-  //   return function (dispatch) {
-  //     const formData = new FormData();
-  //     formData.append('name', name);
-  //     formData.append('createdAt', createdAt);
-  //     formData.append('content', content);
-  //     formData.append('profileImage', profileImage);
-  //     formData.append('image', image);
-  //     for (let key of formData.keys()) { console.log(key); }
-  //     for (var value of formData.values()) { console.log(value); }
-
-  //     const headers = {
-  //       "Content-Type": "multipart/form-data",
-  //     };
+//     return function (dispatch) {
+//       const formData = new FormData();
+//       formData.append('name', name);
+//       formData.append('createdAt', createdAt);
+//       formData.append('content', content);
+//       formData.append('profileImage', profileImage);
+//       formData.append('image', image);
+//       for (let key of formData.keys()) { console.log(key); }
+//       for (var value of formData.values()) { console.log(value); }
+//       console.log(formData);
+//       const headers = {
+//         "Content-Type": "multipart/form-data",
+//       };
   
-  //     axios({
-  //       method: 'post',
-  //       url: 'http://localhost:3001/memo',
-  //       data: formData,
-  //       headers: { headers },
-  //     })
-  //       .then((res) => {
-  //         console.log(res);
-  //         console.log(res.data);
+//       axios({
+//         method: 'post',
+//         url: 'http://52.78.22.71/posts/post',
+//         // url: 'http://localhost:3001/post',
+//         data: formData,
+//         headers: { headers },
+//       })
+//         .then((res) => {
+//           console.log(res);
+//           console.log(res.data);
 
-  //         const new_post = {
-  //           // name:name,
-  //           createdAt: moment().format("YYYY년 MM월 DD일 hh:mm"),
-  //           // content:content,
-  //           // image: res.data.result.image,
-  //           // profileImage:profileImage,
-  //       }
-  //       dispatch(createPost(new_post));
-  //       }).catch(err => {
-  //       console.log("실패.", err);
-  //     })
-  // }
-// }
+//           const new_post = {
+//             name:name,
+//             createdAt: moment().format("YYYY년 MM월 DD일 hh:mm"),
+//             content:content,
+//             // image: res.data.result.image,
+//             profileImage:profileImage,
+//             image:image,
+//         }
+//         dispatch(createPost(new_post));
+//         }).catch(err => {
+//         console.log("실패.", err);
+//       })
+//   }
+// };
 
 
 export default handleActions({

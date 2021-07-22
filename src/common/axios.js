@@ -4,7 +4,9 @@ import axios from 'axios';
 
 
 const instance = axios.create({
-  baseURL: "http://localhost:3001" // 요청을 www.aa.com/user로 보낸다면, www.aa.com까지 기록
+  // baseURL: "http://localhost:3001" // 요청을 www.aa.com/user로 보낸다면, www.aa.com까지 기록
+  baseURL: "http://52.78.22.71"
+  // baseURL: "http://localhost:3000"
 });
 
 // 가지고 있는 토큰 넣어주기!

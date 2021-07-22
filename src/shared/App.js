@@ -15,11 +15,11 @@ const App = () => {
   const user = null;
   return (
     <div className="app">
-      {/* {!user
+      {!user
         ? (
           <Login />
         )
-        : ( */}
+        : (
           <React.Fragment>
             <Header/>
             <ConnectedRouter history={history}>
@@ -28,7 +28,7 @@ const App = () => {
             </div>
             </ConnectedRouter>
           </React.Fragment>
-        {/* )} */}
+        )}
     </div>
   );
 }

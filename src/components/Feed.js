@@ -2,22 +2,22 @@ import React from 'react';
 import "./Feed.css";
 import StoryReel from "./StoryReel";
 import MessageSender from "./MessageSender";
-import SignUpModal from "./SignUpModal";
 import { useEffect, useState } from 'react';
-import post, {actionCreators as postActions} from '../redux/modules/post';
+import {actionCreators as postActions} from '../redux/modules/post';
 import {useDispatch} from "react-redux";
 import axios from 'axios';
 
 import Post from './Post';
 import Rooms from './Rooms';
-import { Sort } from '@material-ui/icons';
 
 function Feed() {
     const dispatch = useDispatch();
     const [posts, setPosts] = useState([]);
     const getData = async() => {
         try{
-            const response = await axios.get('http://localhost:3001/post');  
+            // const response = await axios.get('http://localhost:3001/post');  
+            const response = await axios.get('http://52.78.22.71/posts/post');
+            
             setPosts(response.data);  
             console.log(response.data);
             console.log(response.data[0]);
@@ -37,7 +37,6 @@ function Feed() {
         <div className="feed">
             <StoryReel />
             <MessageSender />
-            {/* MessageSender */}
             <Rooms/>
             {posts.map(post => (
             <Post

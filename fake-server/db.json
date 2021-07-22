@@ -1,130 +1,19 @@
 {
   "signup": [
     {
-      "name": "",
-      "createdAt": "",
-      "content": "asdasd",
-      "image": "",
-      "profileImage": "",
-      "id": "m1BT2-x"
+      "name": "asdas asd",
+      "id": "dasdasd",
+      "password": "asdasdasd",
+      "birth": "2021-8-22",
+      "gender": "female"
     },
     {
-      "name": "",
-      "createdAt": 1994,
-      "content": "asdfsdf",
-      "image": "",
-      "profileImage": "",
-      "id": "YxfTf0h"
-    },
-    {
-      "name": "",
-      "createdAt": "2021-07-20",
-      "content": "안녕하세요",
-      "image": "",
-      "profileImage": "",
-      "id": "gBu4SnO"
-    },
-    {
-      "name": "",
-      "createdAt": "2021-07-20",
-      "content": "하이",
-      "image": "",
-      "profileImage": "",
-      "id": "JuAUDT0"
-    },
-    {
-      "name": "",
-      "createdAt": "2021-07-20",
-      "content": "제발!",
-      "image": "",
-      "profileImage": "",
-      "id": "EYl_Dyl"
-    },
-    {
-      "name": "",
-      "createdAt": "2021-07-20",
-      "content": "제발!!!!!!",
-      "image": "",
-      "profileImage": "",
-      "id": "aTSqYEB"
-    },
-    {
-      "name": "",
-      "createdAt": "2021-07-20",
-      "content": "asdasd",
-      "image": "",
-      "profileImage": "",
-      "id": "PGh3Rp0"
-    },
-    {
-      "name": "",
-      "createdAt": "2021-07-20",
-      "content": "!!!!!!!",
-      "image": "",
-      "profileImage": "",
-      "id": "Fptcbhm"
-    },
-    {
-      "name": "",
-      "createdAt": "2021-07-20",
-      "content": "1234",
-      "image": "",
-      "profileImage": "",
-      "id": "ej78rZQ"
-    },
-    {
-      "name": "",
-      "createdAt": "2021-07-20 22:3",
-      "content": "1234567",
-      "image": "",
-      "profileImage": "",
-      "id": "iCBlv-6"
-    },
-    {
-      "name": "",
-      "createdAt": "방금전",
-      "content": "타임스탬프",
-      "image": "",
-      "profileImage": "",
-      "id": "M8Tkc_3"
-    },
-    {
-      "name": "",
-      "createdAt": "2021-07-20 22:9",
-      "content": "",
-      "image": "",
-      "profileImage": "",
-      "id": "zK_gPh1"
-    },
-    {
-      "name": "",
-      "createdAt": "2021-07-20 22:26",
-      "content": "ㅁㄴㅇㅁㄴㅇㅁㄴㅇ",
-      "image": "",
-      "profileImage": "",
-      "id": "964ZsG7"
-    },
-    {
-      "name": "",
-      "createdAt": "2021-07-20 22:40",
-      "content": "1ㅏㅓㅇㄴ리마너이마ㅓ니아머닝ㅁㄴㅇㅁㄴㅇㅁㄴㅇ",
-      "image": "",
-      "profileImage": "",
-      "id": "fMapqv8"
-    },
-    {
-      "name": "asd asd",
-      "id": "asd",
-      "password": "asdasd",
-      "birth": "2021-07-21",
-      "gender": "other"
-    },
-    {
-      "name": "sdasd asdasda",
-      "id": "asdasda",
-      "password": "sdasdasdasd",
-      "birth": "2021-8-21",
-      "gender": "male"
+      "name": "1 1",
+      "email": "1",
+      "password": "1",
+      "birth": "2021-9-22",
+      "gender": "female",
+      "id": "kW7HYkJ"
     }
   ],
   "post": [
@@ -137,44 +26,45 @@
       "id": 1
     },
     {
-      "name": "",
-      "createdAt": "2021-07-21 10:45",
-      "content": "asdasdasdasd",
-      "image": "",
-      "profileImage": "",
       "id": 2
     },
     {
-      "name": "",
-      "createdAt": "2021-07-21 10:51",
-      "content": "안녕하세요",
-      "image": "",
-      "profileImage": "",
       "id": 3
     },
     {
-      "name": "",
-      "createdAt": "2021-07-21 11:6",
-      "content": "asd",
-      "image": "",
-      "profileImage": "",
       "id": 4
     },
     {
-      "name": "",
-      "createdAt": "2021-07-21 11:7",
-      "content": "asdasdasdasdasdasdasd",
-      "image": "",
-      "profileImage": "",
       "id": 5
     },
     {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
       "name": "",
-      "createdAt": "2021-07-21 11:7",
-      "content": "asdasd",
+      "createdAt": "2021-07-22 11:52",
+      "content": "123123",
       "image": "",
       "profileImage": "",
-      "id": 6
+      "id": 12
+    },
+    {
+      "id": 13
     }
   ]
 }
