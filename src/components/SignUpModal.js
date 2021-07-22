@@ -76,14 +76,6 @@ const SignUpModal = (props) => {
         }
     }
 
-    const signup = () => {
-        if (id === '' || pwd === '' || first_name === "" || last_name === "") {
-            window.alert('성, 이름, 비밀번호, 휴대폰 번호 또는 이메일을 모두 입력해주세요!');
-            return;
-        }
-        dispatch(signupDB(id, pwd, first_name, last_name, year, month, day, value));
-    }
-
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = (e) => {
@@ -102,6 +94,19 @@ const SignUpModal = (props) => {
         setValue(event.target.value);
     };
 
+    const signup = () => {
+        if (id === '' || pwd === '' || first_name === "" || last_name === "") {
+            window.alert('빈칸을 확인해주세요!');
+            return;
+        }
+        return async (dispatch, { history }) => {
+            // dispatch(signupDB(id, pwd, first_name, last_name, year,month,day,value));
+            dispatch(signupDB(id, pwd, first_name, last_name, year, month, day, value));
+            // .then((history.push('/')));
+            // window.location.reload();
+        }
+
+    }
 
     return (
         <div>
