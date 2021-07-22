@@ -67,27 +67,29 @@ const useStyles = makeStyles((theme) => ({
 
 export default function LoginBox() {
     const classes = useStyles();
-
     const dispatch = useDispatch();
-    const [id, setId] = useState();
-    const [pwd, setPwd] = useState();
+
+    const [email, setEmail] = useState("");
+    const [pwd, setPwd] = useState("");
 
     const data = {
-        id: id,
+        email: email,
         pwd: pwd,
     }
 
-    const submitId = (e) => {
-        setId(e.target.value);
-    }
-    const submitPwd = (e) => {
-        setPwd(e.target.value);
-    }
+    // const submitEmail = (e) => {
+    //     setEmail(e.target.value);
+    // }
+    // const submitPwd = (e) => {
+    //     setPwd(e.target.value);
+    // }
 
-    const LogIn = (response) => {
-        dispatch(userActions.logInDB(id, pwd));
+    const LogIn = (email, pwd) => {
+        if (email === "" || pwd === "") {
+            window.alert("아이디 패스워드를 모두 입력해주세요");
+        }
+        dispatch(userActions.logInDB(email, pwd));
     }
-
 
     return (
         <Container component="main" maxWidth="xs">
@@ -99,12 +101,18 @@ export default function LoginBox() {
                         // margin="normal"
                         required
                         fullWidth
-                        id="id"
+                        id="email"
                         label="이메일 또는 전화번호"
-                        name="id"
+                        name="email"
                         autoComplete="email"
                         autoFocus
-                        onChange={submitId}
+                        value={email}
+                        onChange={
+                            (e) => {
+                                setEmail(e.target.value);
+                                console.log(email)
+                            }
+                        }
                     />
                     <TextField
                         variant="outlined"
@@ -116,14 +124,15 @@ export default function LoginBox() {
                         type="password"
                         id="pwd"
                         autoComplete="current-password"
-                        onChange={submitPwd}
+                        value={pwd}
+                        onChange={(e) => { setPwd(e.target.value) }}
                     />
                     <Button
-                        type="submit"
+                        // type="submit"
                         fullWidth
                         variant="contained"
                         className={classes.submit}
-                        onClick={() => { LogIn() }}
+                        onClick={() => LogIn(email, pwd)}
                     >
                         로그인
                     </Button>

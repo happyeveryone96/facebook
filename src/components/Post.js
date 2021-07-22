@@ -1,25 +1,37 @@
 import React from 'react'
+import { useDispatch } from "react-redux";
+import { history } from "../redux/configureStore";
 import "./Post.css"
-import {Avatar} from "@material-ui/core"
+import { Avatar } from "@material-ui/core"
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
 import NearMeIcon from "@material-ui/icons/NearMe";
 import { ExpandMoreOutlined } from "@material-ui/icons";
 import ShareIcon from "@material-ui/icons/Share";
+import DeleteIcon from '@material-ui/icons/Delete';
+import { actionCreators as postActions } from "../redux/modules/post";
 
 
-
-function Post({profilePic, image, username, timestamp, message}) {
+function Post({ id, profilePic, image, username, timestamp, message }) {
+    const dispatch = useDispatch();
     return (
         <div className="post">
             <div className="post__top">
                 <Avatar src={profilePic}
-                className="post__avatar"/>
+                    className="post__avatar" />
+
                 <div className="post__topInfo">
-                    <h3>{username? username : '연다은'}</h3>
+                    <h3>{username ? username : '연다은'}</h3>
                     {/* <p>{new Date(timestamp?.toDate()).toUTCString()}</p> */}
-                    <p>{timestamp? timestamp : '12분'}</p>
+                    <p>{timestamp ? timestamp : '12분'}</p>
                 </div>
+                <DeleteIcon
+                    onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        dispatch(postActions.deletePostDB(id));
+                    }}
+                />
             </div>
 
             <div className="post__bottom">
@@ -27,41 +39,41 @@ function Post({profilePic, image, username, timestamp, message}) {
             </div>
 
             <div className="post__image">
-                <img src={image} alt=""/>
+                <img src={image} alt="" />
             </div>
 
             <div className="post__counts">
                 <div className="post__count">
-                    <p>211</p> 
+                    <p>211</p>
                 </div>
 
                 <div className="post__count__right">
                     <div className="post__count">
-                        <p>댓글 56개</p> 
+                        <p>댓글 56개</p>
                     </div>
 
                     <div className="post_count">
-                        <p>공유 2회</p> 
+                        <p>공유 2회</p>
                     </div>
                 </div>
             </div>
 
             <div className="post__options">
                 <div className="post__option">
-                    <ThumbUpIcon/>
+                    <ThumbUpIcon />
                     <p>좋아요</p>
                 </div>
                 <div className="post__option">
-                    <ChatBubbleOutlineIcon/>
+                    <ChatBubbleOutlineIcon />
                     <p>댓글 달기</p>
                 </div>
                 <div className="post__option">
-                    <ShareIcon/>
+                    <ShareIcon />
                     <p>공유하기</p>
                 </div>
             </div>
         </div>
     )
 }
- 
+
 export default Post
