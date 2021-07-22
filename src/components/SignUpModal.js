@@ -13,6 +13,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import { useDispatch } from "react-redux";
 import signupDB from "../redux/modules/user";
+import { ShopOutlined } from "@material-ui/icons";
 
 
 const SignUpModal = (props) => {
@@ -76,16 +77,12 @@ const SignUpModal = (props) => {
     }
 
     const signup = () => {
-        // if (id === '' || pwd === '' || first_name === "" || last_name === "") {
-        //     window.alert('성, 이름, 비밀번호, 휴대폰 번호 또는 이메일을 모두 입력해주세요!');
-        //     return;
-        // }
-        // dispatch(signupDB(last_name, last_name, id, pwd, year, month, day, gender, option));
+        if (id === '' || pwd === '' || first_name === "" || last_name === "") {
+            window.alert('성, 이름, 비밀번호, 휴대폰 번호 또는 이메일을 모두 입력해주세요!');
+            return;
+        }
         dispatch(signupDB(id, pwd, first_name, last_name, year, month, day, value));
-        window.location.replace('/');
     }
-
-
 
     const [open, setOpen] = React.useState(false);
 
@@ -104,6 +101,7 @@ const SignUpModal = (props) => {
     const handleChange = (event) => {
         setValue(event.target.value);
     };
+
 
     return (
         <div>

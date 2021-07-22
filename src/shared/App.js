@@ -29,7 +29,6 @@ const App = () => {
     //       <PostList />
     //     </React.Fragment>
     //   )} */}
-
   );
 }
 

@@ -1,0 +1,70 @@
+{
+  "signup": [
+    {
+      "name": "asdas asd",
+      "id": "dasdasd",
+      "password": "asdasdasd",
+      "birth": "2021-8-22",
+      "gender": "female"
+    },
+    {
+      "name": "1 1",
+      "email": "1",
+      "password": "1",
+      "birth": "2021-9-22",
+      "gender": "female",
+      "id": "kW7HYkJ"
+    }
+  ],
+  "post": [
+    {
+      "name": "",
+      "createdAt": "2021-07-21 10:43",
+      "content": "asd",
+      "image": "",
+      "profileImage": "",
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "name": "",
+      "createdAt": "2021-07-22 11:52",
+      "content": "123123",
+      "image": "",
+      "profileImage": "",
+      "id": 12
+    },
+    {
+      "id": 13
+    }
+  ]
+}

@@ -13,7 +13,6 @@ const initialState = {
     is_login: false,
 };
 
-
 // Accept헤더
 //자신에게 이러한 데이터 타입만 허용하겠다는 뜻입니다.
 // 즉 브라우저가 요청 메시지의 Accept 헤더 값을 application/json이라고 설정했다면
@@ -54,26 +53,30 @@ const logInDB = (email, pwd) => {
 };
 
 
-
 const signupDB = (id, pwd, first_name, last_name, year, month, day, value) => {
     return function () {
+
         // instance
-        //   .post('/signup', { name: `${first_name} ${last_name}`, id: id, password: pwd, birth: `${year}-${month}-${day}`, gender: value})
+        //   .post('/users/signup', { name: `${first_name} ${last_name}`, email: id, password: pwd, birth: `${year}-${month}-${day}`, gender: value})
         //   .then((alert('회원가입 성공!')))
         instance({
             method: 'post',
             url: '/users/signup',
+            // url: '/signup',
             data: {
                 name: `${first_name} ${last_name}`,
-                id: id,
+                // id: id,
+                email: id,
                 password: pwd,
                 birth: `${year}-${month}-${day}`,
                 gender: value
-            },
+            }
         })
+            // .then((history.replace('/')))
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+
                 console.log(errorCode, errorMessage);
             });
     };
@@ -104,6 +107,6 @@ const actionCreators = {
     logInDB,
     signupDB,
     loginCheck,
-};
+}
 
 export { actionCreators };

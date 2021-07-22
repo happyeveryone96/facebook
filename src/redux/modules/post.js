@@ -48,10 +48,20 @@ const getPostDB = () => {
   };
 };
 
+export const UploadPost = (data) =>
+  async (dispatch, getState, { history }) => {
+    try {
+      const upload = await instance.post("/post", data);
+      console.log(upload);
+    } catch (error) {
+      window.alert(error.message);
+    }
+  };
+
+
 
 const addPostDB = (name, createdAt, content, image, profileImage) => {
   return function () {
-
     instance
       .post('/post', { name: name, createdAt: createdAt, content: content, image: image, profileImage: profileImage })
       .then((window.location.reload()))

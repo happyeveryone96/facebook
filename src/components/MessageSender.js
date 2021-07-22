@@ -17,6 +17,7 @@ import LocationOnSharpIcon from '@material-ui/icons/LocationOnSharp';
 import MoreHorizSharpIcon from '@material-ui/icons/MoreHorizSharp';
 import UploadButtons from './UploadButtons'
 import {actionCreators as postActions} from '../redux/modules/post';
+import UploadPost from '../redux/modules/post';
 import {actionCreators as imageActions} from '../redux/modules/image';
 import { history } from '../redux/configureStore';
 
@@ -45,6 +46,8 @@ function MessageSender() {
 
     //     return `${Math.floor(betweenTimeDay / 365)}년전`;
     // }
+    
+
 
     const date = new Date();
     let currentHour = date.getHours();
@@ -64,6 +67,28 @@ function MessageSender() {
     const [content, setContent] = React.useState('');
     const [image, setImage] = React.useState('');
     const [profileImage, setProfileImage] = React.useState('');
+    console.log(image);
+
+    const formData = new FormData();
+    const handleSubmit = () => {
+        formData.append('name', name);
+        formData.append('createdAt', createdAt);
+        formData.append('content', content);
+        formData.append('profileImage', profileImage);
+        formData.append('image', image);
+    // FormData의 key 확인
+    for (let key of formData.keys()) {
+      console.log(key);
+    }
+
+    // FormData의 value 확인
+    for (let value of formData.values()) {
+      console.log(value);
+    }
+
+    dispatch(UploadPost(formData));
+  };
+
 
     const changeContents = (e) => {
         setContents(e.target.value);
@@ -156,8 +181,8 @@ function MessageSender() {
                                             border:'none', 
                                             overflow:'hidden',
                                             margin:'0 10px'}} 
-                                    rows='4' 
-                                    placeholder="정진우님,무슨 생각을 하고 계신가요?"
+                                    rows='4'
+                                    placeholder="연다은님,무슨 생각을 하고 계신가요?"
                                     onChange={(event) => {
                                         setContent(event.target.value)}}>
                                 </textarea>
@@ -190,6 +215,7 @@ function MessageSender() {
                                 <Grid>
                                 <p>게시물에 추가</p>
                                 </Grid>
+
                                 <Grid is_flex>
                                 <PhotoLibraryIcon onClick={()=>handleUploadButtonOpen()} style={{color:'green'}}/>
                                 <PersonAddSharpIcon style={{color:'blue'}}/>
@@ -198,16 +224,32 @@ function MessageSender() {
                                 <ForumSharpIcon style={{color:'red'}}/>
                                 <MoreHorizSharpIcon />
                                 </Grid>
+
                             </Grid>
+
                             </div>
-                            
+
+                            <div style={{border:'1px solid lightgray', 
+                                        borderRadius:'5px', 
+                                        padding:'5px', 
+                                        width:'450px',
+                                        margin:'4px auto'}}>
+                                <input placeholder="이미지 url을 입력해주세요" 
+                                style={{border:0, width:'100%', height:'30px'}}
+                                onChange={(event) => {
+                                    setImage(event.target.value)
+                                    }}>
+                                </input>
+                            </div>
+
                             </DialogContent>
                             <DialogActions>
                            
                             <Button 
                                 width="468px" 
                                 height="36px" 
-                                _onClick={addPost} 
+                                _onClick={addPost}
+                                // _onClick={handleSubmit} 
                                 color="white" 
                                 backgroundColor="rgb(68,114,227)">
                                 게시
