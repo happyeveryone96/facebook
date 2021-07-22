@@ -76,6 +76,7 @@ const signupDB = (id, pwd, first_name, last_name, year, month, day, value) => {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+
                 console.log(errorCode, errorMessage);
             });
     };

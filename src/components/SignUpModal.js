@@ -14,6 +14,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import { useDispatch } from "react-redux";
 import signupDB from "../redux/modules/user";
 import { ShopOutlined } from "@material-ui/icons";
+import { actionCreators as userActions } from "../redux/modules/user";
 
 
 const SignUpModal = (props) => {
@@ -99,13 +100,7 @@ const SignUpModal = (props) => {
             window.alert('빈칸을 확인해주세요!');
             return;
         }
-        return async (dispatch, { history }) => {
-            // dispatch(signupDB(id, pwd, first_name, last_name, year,month,day,value));
-            dispatch(signupDB(id, pwd, first_name, last_name, year, month, day, value));
-            // .then((history.push('/')));
-            // window.location.reload();
-        }
-
+        dispatch(userActions.signupDB(id, pwd, first_name, last_name, year, month, day, value));
     }
 
     return (
@@ -156,9 +151,6 @@ const SignUpModal = (props) => {
                         }} />
                     생일
                     <Grid>
-
-
-
                         <select onChange={(event) => {
                             setYear(event.target.value);
                         }}
@@ -168,10 +160,6 @@ const SignUpModal = (props) => {
                         >
                             <option value='0'>연도</option>
                             {generateYearOptions()}
-                            {/* <option value="2021">2021</option>
-                    <option value="2020">2020</option>
-                    <option value="2019">2019</option>
-                    <option value="2018">2018</option> */}
                         </select>
                         <select onChange={(event) => {
                             setMonth(event.target.value);
@@ -182,10 +170,6 @@ const SignUpModal = (props) => {
                         >
                             <option value='0'>월</option>
                             {generateMonthOptions()}
-                            {/* <option value="7월">7월</option>
-                    <option value="6월">6월</option>
-                    <option value="5월">5월</option>
-                    <option value="4월">4월</option> */}
                         </select>
                         <select onChange={(event) => {
                             setDay(event.target.value);
@@ -195,10 +179,6 @@ const SignUpModal = (props) => {
                             value={day}>
                             <option value='0'>일</option>
                             {generateDayOptions()}
-                            {/* <option selected value="16">16</option>
-                    <option value="15">15</option>
-                    <option value="14">14</option>
-                    <option value="13">13</option> */}
                         </select>
                     </Grid>
                     <Grid>

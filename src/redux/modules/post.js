@@ -38,7 +38,7 @@ const getPostDB = () => {
       .then((res) => {
         console.log(res);
         console.log(res.data);
-        dispatch(setPost(res.data.result));
+        dispatch(setPost(res.data.posts));
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -112,6 +112,7 @@ const addPostDB = (name, createdAt, content, image, profileImage) => {
 // }
 // }
 
+
 const deletePostDB = (id) => {
   return function (dispatch, getState, { history }) {
     instance
@@ -131,24 +132,21 @@ const deletePostDB = (id) => {
 export default handleActions({
   [SET_POST]: (state, action) => {
     return produce(state, (draft) => {
-      draft.list.push(...action.payload.post_list)
+      draft.list.push(...action.payload.post_list);
     })
   },
   [CREATE_POST]: (state, action) => produce(state, (draft) => {
     draft.list.unshift(action.payload.post);
   }),
-  [DELETE_POST]: (state, action) => {
-    return produce(state, (draft) => {
-      let idx = draft.list.findIndex((p) => p.id === action.payload.post_id);
-      console.log(idx);
-      if (idx !== -1) {
-        // 배열에서 idx 위치의 요소 1개를 지웁니다.
-        draft.list.splice(idx, 1);
-      }
-    })
-  },
-},
-  initialPost
+  [DELETE_POST]: (state, action) => produce(state, (draft) => {
+    let idx = draft.list.findIndex((p) => p.id === action.payload.post_id);
+    console.log(idx);
+
+    if (idx !== -1) {
+      draft.list.splice(idx, 1);
+    }
+  })
+}, initialState
 );
 
 const actionCreators = {
