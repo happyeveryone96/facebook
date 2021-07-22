@@ -34,7 +34,7 @@ const initialPost = {
 const getPostDB = () => {
   return function (dispatch) {
     instance
-      .get('/posts/')
+      .get('/posts')
       .then((res) => {
         console.log(res);
         console.log(res.data);
@@ -118,8 +118,10 @@ const deletePostDB = (id) => {
     instance
       .delete(`/posts/${id}`)
       .then((res) => {
+        console.log("테스트테스트");
         console.log(res);
         dispatch(deletePost(res.data.id));
+        //새로고침 해야만 삭제된 후로 변함
       })
       .catch((err) => {
         window.alert("본인이 작성한 게시글만 지울 수 있어요");

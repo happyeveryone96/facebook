@@ -26,10 +26,12 @@ function Post({ id, profilePic, image, username, timestamp, message }) {
                     <p>{timestamp ? timestamp : '12분'}</p>
                 </div>
                 <DeleteIcon
+                    className="delete"
                     onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
                         dispatch(postActions.deletePostDB(id));
+                        console.log(id);
                     }}
                 />
             </div>
