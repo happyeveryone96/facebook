@@ -6,3 +6,5 @@
 - 구현 기능
  > FE : 토큰로그인, 회원가입 모달창, 데이터 가져오기, 데이터 삭제<br>
  > BE : MySQL, 배포
+
+(https://youtu.be/qrVEjuJ5uZo) 
