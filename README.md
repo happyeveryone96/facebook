@@ -7,4 +7,4 @@
  > FE : 토큰로그인, 회원가입 모달창, 데이터 가져오기, 데이터 삭제<br>
  > BE : MySQL, 배포
 
-(http://img.youtube.com/vi/qrVEjuJ5uZo/0.jpg)](https://youtu.be/qrVEjuJ5uZo?t=0s) 
+[![IU(아이유) _ Into the I-LAND](http://img.youtube.com/vi/qrVEjuJ5uZo/0.jpg)](https://youtu.be/qrVEjuJ5uZo?t=0s) 
