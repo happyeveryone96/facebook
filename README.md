@@ -8,4 +8,4 @@
  > BE : MySQL, 배포
 
 - 데모영상 유튜브 링크<br>
-https://www.youtube.com/embed/qrVEjuJ5uZo
+https://www.youtube.com/qrVEjuJ5uZo
